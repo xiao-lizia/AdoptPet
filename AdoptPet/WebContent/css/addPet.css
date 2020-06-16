@@ -1,0 +1,81 @@
+.icon_pet{
+	transform: rotate(-90deg);
+}
+.nav_item ul#ul_pet{
+	display: block;
+}
+.two_ul li{
+	background: none;
+}
+.add_pet_a{
+	background: #c84200;
+}
+.con{
+	min-height: 350px;
+	border: 1px solid #299366;
+	margin: 10px 20px 50px 20px; 
+}
+.con_nav{
+	line-height: 50px;
+	padding-left: 15px;
+	color: #807979;
+	border-bottom: 1px solid #d3b9b9;
+}
+form{
+	margin:15px auto;
+	width: 800px;
+}
+h1{
+	line-height: 50px;
+	background-color: #00B1A9;
+	color:#fff;
+	padding-left: 15px;
+	font-size: 18px;
+}
+.con_right span{
+	background-color: #fbfbfb;
+	display: inline-block;
+	width: 20%;
+	margin-bottom: 15px;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #d4d4d4;
+	color: #6c6c6c;
+	box-sizing:border-box;
+}
+.con_right input{
+	vertical-align: top;
+}
+select,.con_right input{
+	margin:0px;
+	width:80%;
+	height: 40px;
+	line-height: 40px;
+	box-sizing:border-box;
+	border: 1px solid #d4d4d4;
+	border-left: none;
+	padding-left: 5px;
+}
+div select{
+	width: 20%;
+}
+.con_right .btnsend{
+	width: 20%;
+	background-color: #2ea2a2;
+	color: #fff;
+	border: 1.5px solid #3cb866;
+	height: 35px;
+	border-radius: 35px;
+	line-height: 35px;
+	font-size: 16px;
+	cursor:pointer;
+}
+.select_sex{
+	vertical-align: top;
+	margin-left: -5px;
+}
+span i{
+	color:red;
+	margin-right:10px;
+}

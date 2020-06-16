@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.liliting.mapper.LeavingMessageMapper">
+	<select id="queryLeavingMessagetoCount" resultType="int">
+		select count(lmid) from leavingMessage
+	</select>
+	<select id="queryLeavingMessageAll" resultType="HashMap" parameterType="hashMap">
+		select lm.*,uAccount,uPic 
+		from leavingMessage lm,user 
+		where lm.uid = user.uid 
+		order by lmtime desc 
+		limit #{currentArticle},#{pageSize}
+	</select>
+	<insert id="addLeavingMessage" parameterType="leavingMessage">
+		insert into leavingMessage(uId,lmContent) values(#{uId},#{lmContent})
+	</insert>
+</mapper>

@@ -1,0 +1,123 @@
+.con_nav{
+	line-height: 50px;
+	padding-left: 15px;
+	color: #807979;
+	border-bottom: 1px solid #d3b9b9;
+}
+h1{
+	line-height: 50px;
+	background-color: #00B1A9;
+	color:#fff;
+	padding-left: 15px;
+	font-size: 18px;
+}
+.con{    
+	margin: 10px;
+    border: 1px solid #00b0a8;
+    height:600px;
+}
+input#reset{
+	border: 1px solid #4cd200;
+    width: 100px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    color: #fff7f7;
+    float: right;
+    margin-right: 100px;
+    margin-top: 30px;
+    background-color: #00a1bb;
+    cursor:pointer;
+}
+}
+.user_head{
+	width: 100%;
+	height: 100px;
+}
+.user_head img{
+	width: 80px;
+	height: 80px;
+	border-radius: 80px;
+	margin-left: 50px;
+	margin-top: 10px;
+}
+.user_head span.tishi {
+    border: none;
+    background-color: #fff;
+    width: 500px;
+    vertical-align: top;
+    color: #ff3b3b;
+    font-family: FZShuTi;
+    background: #f7f7f7;
+	margin-top: 20px;
+}
+input#uploadPic {
+    width: 50px;
+    cursor: pointer;
+}
+input.pPic {
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+}
+#file_photo {
+    width: 40px;
+    height: 30px;
+    margin-top: 5px;
+    position: absolute;
+}
+.con span.file_name {
+    margin-left: -5px;
+    width: 40%;
+    color: #ff3b3b;
+}
+.con span{
+	background-color: #fbfbfb;
+	display: inline-block;
+	width: 20%;
+	margin-bottom: 10px;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #d4d4d4;
+	color: #6c6c6c;
+	box-sizing:border-box;
+}
+.con input{
+	float: right;
+}
+select,.con input{
+	margin:0px;
+	width:80%;
+	height: 40px;
+	line-height: 40px;
+	box-sizing:border-box;
+	border: 1px solid #d4d4d4;
+	border-left: none;	
+	padding-left: 5px;
+}
+div select{
+	width: 20%;
+	vertical-align: top;
+	margin-left: -4px;
+}
+.con .btnsend{
+	float: left;
+    border-left: 1px solid #d4d4d4;
+    width: 17%;
+    background-color: #2ea2a2;
+    margin-left: 20px;
+    border-radius: 35px;
+}
+.uAccount{
+	background-color: #e8e8e8;
+}
+.hidden{
+	display: none;
+}
+.nav_ul .index_a{
+	background: #c84200;
+}
+.two_ul li{
+	background: none;
+}

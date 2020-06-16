@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.liliting.mapper.PetMapper">
+	<select id="queryUidByPid" resultType="int" parameterType="int">
+		select uId from pet where pId = #{pId}
+	</select>
+	<select id="queryPetToCount" resultType="int" parameterType="int">
+		select count(pId) from pet 
+		<where>
+			<if test="1">
+				and pType = 2
+			</if>
+			<if test="uId !=null and uId !=0">
+				and pet.pid not in (select pid from adoptpet where uid = #{uId})
+			</if>
+		</where>
+	</select>
+	<select id="queryPetsAll" resultType="HashMap" parameterType="hashMap">
+		select pet.*,user.uAccount,user.uId from pet,user 
+		<where>
+			<if test="1">
+				pet.uid=user.uid and pType = 2
+			</if>
+			<if test="uId !=null and uId !=0">
+				and pet.pid not in (select pid from adoptpet where uid =#{uId}) 
+			</if>
+		</where>
+		order by applyTime desc 
+		limit #{currentArticle},#{pageSize}
+	</select>
+	<select id="queryPetByPid" resultType="HashMap" parameterType="int">
+		select pet.*,user.uAccount,user.uPic from pet,user 
+		where pet.uid=user.uid and pId= #{pId}
+	</select>
+	
+	<select id="querySendPetByUid" resultType="HashMap" parameterType="int">
+		select * from pet where uid = #{uId}
+	</select>
+	
+	<select id="querySendApplyCount" resultType="int" parameterType="int">
+		select count(pId) from pet 
+		<where>
+			<if test="pType != null and pType != 0">
+				and pType = #{pType}
+			</if>
+			<if test="pName != null and pName != ''">
+				and pName like concat(concat('%',#{pName}),'%')
+			</if>
+		</where>
+	</select>
+	<select id="querySendApplyCheck" resultType="HashMap" parameterType="hashMap">
+		select pet.*,user.uAccount from pet,user
+		<where>
+			<if test="pType != null and pType != 0">
+				and pType = #{pType}
+			</if>
+			<if test="1">
+				and user.uId = pet.uId
+			</if>
+			<if test="pName != null and pName != ''">
+				and pName like concat(concat('%',#{pName}),'%')
+			</if>
+			<if test="_parameter.containsKey('orderType') and orderType !=null and orderType!=''">
+				order by applyTime ${orderType}
+			</if>
+		</where>
+		limit #{currentArticle},#{pageSize}
+	</select>
+	
+	<update id="updatePetpType" parameterType="pet">
+		update pet set pType = #{pType} where pId=#{pId}
+	</update>
+	<insert id="addPetApplyByUser" parameterType="pet">
+		insert into pet(uId,pName,pType,pKid,pAge,pSex,pDesc,pPic) values(#{uId},#{pName},#{pType},#{pKid},#{pAge},#{pSex},#{pDesc},#{pPic})
+	</insert>
+	<insert id="addPetApplyByAdmin" parameterType="pet">
+		insert into pet(uId,pName,pType,pKid,pAge,pSex,pDesc,pPic,checkTime) values(#{uId},#{pName},#{pType},#{pKid},#{pAge},#{pSex},#{pDesc},#{pPic},#{checkTime})
+	</insert>
+	
+	<!-- 宠物列表的sql语句 -->
+	<select id="queryPetByAccountLike" resultType="int" parameterType="String">
+		select count(pId) from pet,user
+		<where>
+			<if test="1">
+				and pet.uid=user.uid 
+			</if>
+			<if test="uAccount != null and uAccount != ''">
+				and uAccount like concat(concat('%',#{uAccount}),'%')
+			</if>
+		</where>
+	</select>
+	<select id="queryPetsAllByLike" resultType="HashMap" parameterType="hashMap">
+		select pet.*,user.uAccount from pet,user 
+		<where>
+			<if test="uAccount != null and uAccount != ''">
+				and uAccount like concat(concat('%',#{uAccount}),'%')
+			</if>
+			<if test="1">
+				and pet.uid=user.uid 
+			</if>
+		</where>
+		order by applyTime desc 
+		limit #{currentArticle},#{pageSize}
+	</select>
+	<delete id="delPetByPid" parameterType="int">
+		delete from pet where pid = #{pId}
+	</delete>
+	
+	<update id="updatePetByPid" parameterType="pet">
+		update pet set pType = #{pType},pPic = #{pPic},pName = #{pName},pKid = #{pKid},pSex = #{pSex},pAge = #{pAge},pDesc = #{pDesc} where pId=#{pId}
+	</update>
+	
+	<update id="updateSendPetApplyTypeByPid" parameterType="hashMap">
+		update pet set pType = #{pType} where pId = #{pId}
+	</update>
+</mapper>

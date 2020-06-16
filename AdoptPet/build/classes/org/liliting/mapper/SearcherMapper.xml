@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.liliting.mapper.SearcherMapper">
+	<select id="querySearcherToCountByLike" resultType="int" parameterType="searcher">
+		select count(sId) from searcher 
+		<where>
+			<if test="sTitle!=null and sTitle!=''">
+				or sTitle  like concat(concat('%',#{sTitle}),'%')
+			</if>
+			<if test="sDesc!=null and sDesc!=''">
+				or sDesc  like concat(concat('%',#{sTitle}),'%')
+			</if>
+		</where>
+	</select>
+	<select id="querySearchersAllByLike" resultType="HashMap" parameterType="hashMap">
+		select s.*,user.uAccount,user.uPic from searcher s,user 
+		<where>
+			<if test="1">
+				 s.uid=user.uid
+			</if>
+			<if test="sTitle!=null and sTitle!=''">
+				and( sTitle  like concat(concat('%',#{sTitle}),'%') or sDesc like concat(concat('%',#{sDesc}),'%') )
+			</if>
+		</where>
+		order by sTime desc limit #{currentArticle},#{pageSize}
+	</select>
+	<insert id="addSearcher" parameterType="searcher">
+		insert into searcher(uId,sTitle,sDesc,sPic,sType) values(#{uId},#{sTitle},#{sDesc},#{sPic},#{sType})
+	</insert>
+	<delete id="delSearcherBysId" parameterType="int">
+		delete from searcher where sId = #{sId}
+	</delete>
+</mapper>

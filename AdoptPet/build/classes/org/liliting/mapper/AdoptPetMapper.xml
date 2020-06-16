@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.liliting.mapper.AdoptPetMapper">
+	<insert id="addAdoptApply" parameterType="adoptPet">
+		insert into adoptPet(pid,uid,atype) values(#{pId},#{uId},#{aType})
+	</insert>
+	<select id="queryApplyAdoptByUid" resultType="HashMap" parameterType="int">
+		select p.pId,ap.uId,p.pPic,p.pName,p.pSex,p.pKid,ap.aType,ap.applyTime,ap.checkTime
+		from adoptpet ap,pet p 
+		where ap.uid = #{uId} and p.pId = ap.Pid
+	</select>
+	<select id="queryApplyCount" resultType="int" parameterType="int">
+		select count(uid) from adoptpet where pid= #{pId}
+	</select>
+	<select id="queryAdoptApplyCheck" resultType="HashMap" parameterType="hashMap">
+		select user.uAccount,p.pId,ap.aId,ap.uId,p.pPic,p.pName,p.pSex,p.pKid,ap.aType,ap.applyTime,ap.checkTime
+		from adoptpet ap,pet p,user
+		<where>
+			<if test="aType != null and aType != 0">
+				and aType = #{aType}
+			</if>
+			<if test="pName != null and pName != ''">
+				and pName like concat(concat('%',#{pName}),'%')
+			</if>
+			<if test="1">
+				and p.pId = ap.Pid and user.uId =ap.uId
+			</if>
+			<if test="_parameter.containsKey('orderType') and orderType !=null and orderType!=''">
+                order by applyTime ${orderType}
+            </if>
+		</where>
+		limit #{currentArticle},#{pageSize}
+	</select>
+	
+	<select id="queryAdoptApplyCount" resultType="int" parameterType="hashMap">
+		select count(aId) from adoptPet,pet
+		<where>
+			<if test="aType != null and aType != 0">
+				and aType = #{aType}
+			</if>
+			<if test="1">
+				and pet.pId = adoptPet.pId
+			</if>
+			<if test="pName != null and pName != ''">
+				and pName like concat(concat('%',#{pName}),'%')
+			</if>
+		</where>
+	</select>
+	<update id="updateAdoptApplyTypeByAid" parameterType="hashMap">
+		update adoptpet set aType = #{aType},checkTime = #{checkTime} where aId = #{aId}
+	</update>
+	<update id="updateAdoptApplyTypeByPid" parameterType="hashMap">
+		update adoptPet set aType = 3,checkTime = #{checkTime} where pId = #{pId} and aId != #{aId}
+	</update>
+</mapper>

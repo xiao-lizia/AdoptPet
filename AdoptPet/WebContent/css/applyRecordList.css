@@ -1,0 +1,139 @@
+.icon_adopt{
+	transform: rotate(-90deg);
+}
+.nav_item ul#ul_pet_adopt{
+	display: block;
+}
+
+.con{
+	min-height: 350px;
+	border: 1px solid #299366;
+	margin: 10px 20px 0px 20px; 
+}
+.con_nav{
+	line-height: 50px;
+	padding-left: 15px;
+	color: #807979;
+	border-bottom: 1px solid #d3b9b9;
+}
+h1{
+	line-height: 50px;
+	background-color: #00B1A9;
+	color:#fff;
+	padding-left: 15px;
+	font-size: 18px;
+}
+#adoptApply{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;  
+    border-collapse:collapse;  
+    margin: 1%;
+    width:98%;
+}
+#adoptApply td, #adoptApply th{  
+    font-size:1em;  
+    border: 1.5px solid #9e9e9e;
+    padding:3px 7px 2px 7px;  
+}
+#adoptApply th{  
+	font-size: 1.1em;
+	padding-top: 5px;
+	padding-bottom: 4px;
+	background-color: #838D8D;
+	color: #ffffff;
+	height: 40px;
+	text-align: center;
+	border: 2px solid #cfcdcd;
+}
+#adoptApply tr.alt td{  
+    color:#462020; 
+    text-align: center;  
+}
+#adoptApply tr.alt td.zhuangtai{
+	color: red;
+}
+#pPic_img{
+	margin: 0;
+	padding: 0;
+	width: 150px;
+	height: 60px;
+}
+td.operation input{    
+	width: 50px;
+	height: 30px;
+    display: inline-block;
+    margin: 0;
+	padding: 0;
+	color: #000;
+	background-color: #fff;
+	cursor: pointer;
+}
+td.operation a{   
+	width: 50px;
+	height: 30px;
+    display: inline-block;
+    margin: 0;
+	padding: 0;
+	color: #000;
+	background-color: #fff;
+	cursor: pointer;
+	border: 1.5px solid #a2a2a2;
+	line-height: 30px;
+}
+td.operation .pass,.no_pass{
+	margin-right: 2px;
+	font-size: 14px;
+}
+.search{
+	height: 35px;
+	position: relative;
+	margin-top: 15px;
+}
+.search input{
+	width: 200px;
+	height: 35px;
+	box-sizing: border-box;
+	padding-left: 10px;
+	border: 1px solid #b3b3b3;
+	color: #8f8f8f;
+	margin-left: 15px;
+}
+.con input.search_a{
+	box-sizing: border-box;
+	display: inline-block;
+	width: 100px;
+	vertical-align: middle;
+	background-color: #d70000;
+	text-align: center;
+	line-height: 35px;
+	color:#fff;
+	cursor:pointer;
+}
+.page{
+	height: 100%;
+    text-align: center;
+    width: 80%;
+    font-size: 14px;
+    margin: 20px 0 0px 0;
+    padding-bottom: 15px;
+}
+.page span{
+	margin:0 10px 0 10px;
+	
+}
+.page a{
+	display:inline-block;
+	color:#333;
+}
+.page span i {
+    color: #fd5b5b;
+    margin-right: 4px;
+}
+.sel_page {
+    width: 40px;
+    border: 1px solid #19bec6;
+    color: #09c6a2;
+    font-weight: bold;
+}
+#nextPage {
+    margin: 0 5px;
+}

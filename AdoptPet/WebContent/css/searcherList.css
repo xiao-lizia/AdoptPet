@@ -1,0 +1,130 @@
+.inden, .rank_ul ul {
+    display: block;
+}
+.icon_search{
+	transform: rotate(-90deg);
+}
+.nav_item ul#ul_search{
+	display: block;
+}
+.two_ul li{
+	background: none;
+}
+.search_list_a{
+	background: #c84200;
+}
+.con_nav{
+	border-bottom: 1px solid #d3b9b9;
+}
+.search {
+    height: 35px;
+    position: relative;
+    margin-top: 5px;
+}
+form input {
+    width: 200px;
+    height: 35px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    border: 1px solid #b3b3b3;
+    color: #8f8f8f;
+    margin-left: 10px;
+}
+form input.search_a {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100px;
+    vertical-align: middle;
+    background-color: #d70000;
+    text-align: center;
+    line-height: 35px;
+    color: #fff;
+    cursor: pointer;
+}
+.list{
+	float: left;
+	width: 95%;
+	font-size: 13px;
+	margin-top: 10px;
+	clear: both;
+	margin-left: 10px;
+}
+.photo_list {
+   	width: 10%;
+   	text-align: center;
+    height: 100px;
+   }
+.photo_list img {
+    height: 100px;
+}
+.photo_list p {
+    height: 10px;
+    line-height: 0px;
+}
+.text_list {
+	width: 84%;
+	margin-left: 1%;
+	padding:0;
+	position: relative;
+}
+.text_list h3 {
+	font-weight: normal;
+	border-bottom: 1px solid #c0a200;
+	padding-left: 5px;
+}
+.text_list h3 strong{
+	font-weight: normal;
+	color: #eb7900;
+}
+.desc{
+	font-size: 0.9em;
+	height: 60px;
+	line-height: 20px;
+	width: 90%;
+	padding: 0;
+	margin: 0 5px;
+}
+.adopt{
+	background: #df4646;
+	border: 1px solid #ff8300;
+	margin: 0px;
+	position: absolute;
+	right: 5px;
+	top: 50px;
+	width: 60px;
+	height: 25px;
+}
+.info_text{
+	margin-bottom: 5px;
+}
+.page{
+	height: 100%;
+	text-align: center;
+	width: 80%;
+	font-size: 14px;
+	padding-bottom: 10px;
+	margin: auto;
+	float: left;
+	margin-top: 10px;
+}
+.page span{
+	margin:0 10px 0 10px;
+	
+}
+.page a{
+	display:inline-block;
+	color:#333;
+}
+.page span i {
+    color: #fd5b5b;
+    margin-right: 4px;
+}
+.sel_page {
+    width: 40px;
+    border: 1px solid #19bec6;
+    color: #09c6a2;
+    font-weight: bold;
+}
+#nextPage {
+    margin: 0 5px;
+}

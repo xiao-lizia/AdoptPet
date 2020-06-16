@@ -1,0 +1,281 @@
+*{
+	margin:0px;
+	padding:0px;
+	font-family: "微软雅黑";
+}
+a{
+	display: block;
+}
+img,span{
+	display: inline-block;
+}
+body{
+	background-size: cover;
+	position: relative;
+}
+a{
+	transition: background-color 0.2s linear 0s;
+    -moz-transition: background-color 0.2s linear 0s; /* Firefox 4 */
+	-webkit-transition: background-color 0.2s linear 0s; /* Safari and Chrome */
+ 	-o-transition: background-color 0.2s linear 0s; /* Opera */
+	text-decoration: none;
+	color: #d7d7d7;
+}
+li{
+	list-style:none;
+	cursor: pointer;
+}
+
+
+.header{
+	display:none;
+	color: #a5a4a4;
+	position: absolute;
+	left:83%;
+	top: 90px;
+}
+.header a:first-child{
+	margin-right: 10px;
+}
+.header a:not(:first-child){
+	margin-left: 10px;
+}
+.header a{
+	display: inline-block;
+	color: #a5a4a4;
+}
+.logo{
+	width: 80%;
+	margin: auto;
+}
+.logo img{
+	width: 100%;
+	height: 100px;
+}
+.nav{
+	width: 80%;
+	height: 50px;
+	background: #616467;
+	margin: auto;
+	margin-top:10px;
+}
+.nav_left{
+	width: 70%;
+}
+.nav_left ul li{
+	color: #494949;
+	width: 15%;
+	height: 50px;
+	font-size: 1em;
+	text-align: center;
+	line-height: 50px;
+	float: left;
+}
+.nav_left ul li a:hover{
+	color: white;
+}
+.nav_left ul li a.selecter{
+	background-color: #000;
+	color: white;
+}
+.nav_right{
+	width: 20%;
+	float: right;
+}
+.rank_ul{
+	width: 200px;
+	height: 50px;
+	display: block;
+	float: left;
+	z-index: 1;
+	position: absolute;
+}
+.inden,.rank_ul ul{
+	display: none;
+}
+.inden,.rank_ul li{
+	line-height: 50px;
+	height: 50px;
+	width: 200px;
+	color: white;
+	text-align: center;
+}
+.rank_ul li:first-child{
+	text-align: right;
+}
+.rank_ul li:not(:first-child){
+	background-color: #616467;
+	display: none;
+}
+.rank_ul li:not(:first-child):hover{
+	background-color: #000;
+	color: white;
+}
+.head{
+	width:35px;
+	height:35px;
+	vertical-align: middle;
+	margin-right:15px;
+	border-radius:25px;
+}
+.arrow{
+	width: 15px;
+	height: 15px;
+	margin-left:20px;
+	float: right;
+	transform: rotate(-90deg);
+	margin-top: 20px;
+}
+.content{
+	width: 80%;
+	margin:auto;
+	margin-top: 10px;
+}
+.con_left{
+	width: 60%;
+	margin-right: 10px;
+	background-color: rgba(225,225,225,0.4);
+}
+.user_head img{
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	float: left;
+	margin-right: 20px;
+}
+.user{
+	margin-bottom: 10px;
+	padding: 15px 10px 0;
+}
+.user_info{
+	float: left;
+	width: 350px;
+	line-height: 25px;
+}
+.user_name{
+	color: #ff6d00;
+}
+.fb_time{
+	font-size: 12px;
+}
+.con_right{
+	background: #000;
+}
+.clear{
+	clear: both;
+}
+.title{
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 23px;
+	margin: 10px 0px 10px;
+	padding: 0 10px 5px;
+	color: #333;
+}
+.pet_pic{
+	width: 400px;
+	position: relative;
+	margin: 0 0 10px 10px;
+}
+.pet_pic img{
+	width:400px;
+	max-height: 200px;
+}
+.pet_info{
+	line-height: 28px;
+	margin: 0 auto 10px;
+	padding: 0 10px;
+	font-family: 'Helvetica Neue',Helvetica,Arial,Sans-serif;
+}
+.leaving{
+	background: #fafafa;
+	padding: 10px;
+	margin: 0 0 10px;
+	font-size: 12px;
+}
+.con_right{
+	background-color: rgba(225,225,225,0.4);
+	width: 30%;
+	position: fixed;
+	top: 175px;
+	right: 10%;
+	line-height: 25px;
+	padding-left: 10px;
+}
+.zhuyi{
+	margin-top: 10px;
+}
+.con_right p{
+	margin: 10px 0 10px 0;
+	font-weight: bold;
+	font-size: 18px;
+	color: #cd9665;
+}
+.btnfb{
+	width: 120px;
+	height: 40px;
+	background-color: #CAB872;
+	border-radius: 15px;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+.page {
+    text-align: center;
+    width: 80%;
+    margin: 20px 0 20px 0;
+    color: #333;
+	font-size: 14px;
+}
+.page a,.page span{
+	color:#333;
+	font-size: 14px;
+	display:inline-block;
+	margin-right: 10px;
+}
+.sel_page{
+	width: 40px;
+	border: 1px solid #19bec6;
+	color: #09c6a2;
+	font-weight: bold;
+}
+#nextPage{
+	margin:0 5px;
+}
+.page span i{
+	color:#fd5b5b;
+	margin-right: 4px;
+}
+.zhuyi span{
+	color: red;
+}
+.clear{
+	clear:both
+}
+.footer{
+	width:80%;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	border-top: 2px solid #d2d2d2;
+	margin:auto;
+	color: #a5a4a4;
+	font-family: "宋体";
+	background-color:rgba(255,255,255,0.5);
+}
+.footer span{
+	margin-left: 1em;
+}
+.gotop
+{
+	position: fixed;
+    right: 15px;
+    bottom: 20px;
+    width: 68px;
+    height: 29px;
+    background: url(/AdoptPet/images/top.png) no-repeat 0 -40px;
+    z-index: 1000;
+}
+.gotop:hover
+{
+	 background: url(/AdoptPet/images/top.png) no-repeat 0 0;
+}

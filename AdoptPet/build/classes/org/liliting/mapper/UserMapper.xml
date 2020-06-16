@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.liliting.mapper.UserMapper">
+	<select id="userLogin" resultType="user" parameterType="user">
+		select * from user where uAccount = #{uAccount} and uPwd = #{uPwd} and uIdentify = #{uIdentify}
+		<!-- where 标签自动识别第一个if，并且把第一个if的and去掉
+		<where>
+			 如果test="student有sname属性且不为null且不为''  " 
+			<if test="uAccount != null and uAccount != ''">
+				and uAccount = #{uAccount}
+			</if>
+			<if test="uPwd != null and uPwd != ''">
+				and uPwd = #{uPwd}
+			</if>
+			<if test="uIdentify != null and uIdentify != ''">
+				and uIdentify = #{uIdentify}
+			</if>
+		</where>
+		 -->
+	</select>
+	
+	<select id="isTrueByMibao" resultType="int" parameterType="hashMap">
+		select count(uId) from user where uAccount = #{uAccount} and uQuestion = #{uQuestion} and uAnswer=#{uAnswer}
+	</select>
+	<update id="updateUserInfo" parameterType="user">
+		update user
+		<set>
+			<if test="1">
+				uPic = #{uPic},uSex = #{uSex},
+			</if>
+			<if test="uName != null and uName != ''">
+				uName = #{uName},
+			</if>
+			<if test="uQuestion != null and uQuestion != ''">
+				uQuestion = #{uQuestion},
+			</if>
+			<if test="uAnswer != null and uAnswer != ''">
+				uAnswer = #{uAnswer},
+			</if>
+			<if test="uPhone != null and uPhone != ''">
+				uPhone = #{uPhone},
+			</if>
+			<if test="uAddress != null and uAddress != ''">
+				uAddress = #{uAddress}
+			</if>
+		</set>
+		where uId = #{uId}
+	</update>
+	<update id="changePwd" parameterType="hashMap">
+		update user set uPwd=#{uPwd} where uAccount = #{uAccount}
+	</update>
+	
+	<select id="queryUserByAccount" resultType="user" parameterType="String">
+		select * from user where uAccount = #{uAccount}
+	</select>
+	<insert id="addUser" parameterType="user">
+		insert into user(uAccount,uPwd,uIdentify,uPic) values(#{uAccount},#{uPwd},#{uIdentify},#{uPic})
+	</insert>
+	
+	<select id="queryUserByAccountLike" resultType="int" parameterType="String">
+		select count(uid) from user 
+		<where>
+			<if test="uAccount != null and uAccount != ''">
+				and uAccount like concat(concat('%',#{uAccount}),'%')
+			</if>
+		</where>
+	</select>
+	<select id="queryUserAll" resultType="hashMap" parameterType="hashMap">
+		select * from user 
+		<where>
+			<if test="uAccount != null and uAccount != ''">
+				and uAccount like concat(concat('%',#{uAccount}),'%')
+			</if>
+		</where>
+		order by uTime desc limit #{currentArticle},#{pageSize}
+	</select>
+	<select id="isTureByOldPwd" resultType="int" parameterType="hashMap">
+		select count(uId) from user where uAccount = #{uAccount} and uPwd = #{uPwd}
+	</select>
+	<delete id="delUserByAccount" parameterType="String">
+		delete from user where uAccount = #{uAccount}
+	</delete>
+</mapper>
