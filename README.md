@@ -24,8 +24,8 @@
 系统采用mysql数据库进行数据存储，访问项目前，应先执行adoptPet.sql文件，完成数据库的创建和数据添加。项目中缺少db.properties文件，该文件是项目与数据库连接的配置信息，放置在src目录下。文件内容如下：  
 driver=com.mysql.jdbc.Driver  
 url=jdbc:mysql://localhost:3306/adoptpet?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=utf8  
-username=数据库用户名
-password=数据库密码
+username=数据库用户名  
+password=数据库密码  
 如果你使用其他数据库，那么driver（驱动）和url也要进行相应的修改。
 
 
